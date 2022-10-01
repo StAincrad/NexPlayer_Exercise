@@ -43,10 +43,11 @@ public class PlayPauseBehaviour : MonoBehaviour
     
     public void OnPlayPause()
     {
-        long time = new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds();
-        onPlayPause(tracker, time);
+        var time = new DateTimeOffset(DateTime.Now);
+        var unix = time.ToUnixTimeSeconds();
+        onPlayPause(tracker, unix);
         PrintNumberPlayPauseEvents();
-        PrintLastTimeStamp();
+        PrintLastTimeStamp(time);
     }
 
     private void PrintNumberPlayPauseEvents()
@@ -55,10 +56,11 @@ public class PlayPauseBehaviour : MonoBehaviour
         events.text = "Play/Pause events: " + n;
     }
 
-    public void PrintLastTimeStamp()
+    private void PrintLastTimeStamp(DateTimeOffset time)
     {
         long t =  getLastTimeStamp(tracker);
-        timeStamp.text = "LastTimeStamp: " + t;
+        timeStamp.text = "LastTimeStamp: " + t + "\n" 
+                         + "Date: " + time.DateTime;
     }
 
     private void OnDestroy()
