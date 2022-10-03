@@ -17,7 +17,7 @@ public:
 	/// the time stamp will be saved.
 	/// </summary>
 	/// <param name="currentTimeStamp">Time to save</param>
-	void OnPlayPause(unsigned long long  currentTimeStamp);
+	void OnPlayPause(int currentTimeStamp);
 	/// <summary>
 	///	Return Number of state changes during the execution.
 	/// </summary>
@@ -25,13 +25,13 @@ public:
 	/// <summary>
 	/// Return the last time stamp saved
 	/// </summary>
-	long long GetLastTimestamp();
+	int GetLastTimestamp();
 
 private:
 	// Number of times of Play/Pause
 	int _numberPlayPause = 0;
 	// Last time stamp saved
-	unsigned long long  _lastTimeStamp = 0;
+	int  _lastTimeStamp = 0;
 };
 
 /// <summary>
@@ -48,7 +48,7 @@ extern "C" EXPORT void freeTracker(NPTracker* instance);
 /// the time stamp will be saved.
 /// </summary>
 /// <param name="currentTimeStamp">Time to save</param>
-extern "C" EXPORT void onPlayPause(NPTracker * instance, unsigned long long currentTimeStamp);
+extern "C" EXPORT void onPlayPause(NPTracker * instance, int currentTimeStamp);
 /// <summary>
 ///	Return Number of state changes during the execution.
 /// </summary>
@@ -56,4 +56,4 @@ extern "C" EXPORT int getNumberPlayPauseEvents(NPTracker * instance);
 /// <summary>
 /// Return the last time stamp saved
 /// </summary>NPTracker* instance
-extern "C" EXPORT unsigned long long  getLastTimeStamp(NPTracker * instance);
+extern "C" EXPORT int getLastTimeStamp(NPTracker * instance);

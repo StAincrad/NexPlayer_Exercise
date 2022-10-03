@@ -1201,9 +1201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LastTimeStamp: 0000000000
-
-    Date: 01/10/2022 11:05:57'
+  m_text: 'LastTimeStamp: 0 sec'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9980bb077535948438f15fc81b4398f5, type: 2}
   m_sharedMaterial: {fileID: -5732681704737682406, guid: 9980bb077535948438f15fc81b4398f5, type: 2}
@@ -8046,8 +8044,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34967a623c2aed419e61af6c657e910, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  events: {fileID: 1575798714}
-  timeStamp: {fileID: 258809578}
+  eventsUI: {fileID: 1575798714}
+  timeStampUI: {fileID: 258809578}
+  npManager: {fileID: 1578430128}
 --- !u!114 &1729212611
 MonoBehaviour:
   m_ObjectHideFlags: 0
